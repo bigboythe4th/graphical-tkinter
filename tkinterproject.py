@@ -5,9 +5,7 @@ def predict_stock_price():
         trade_volume = float(txtTradeVolume.get())
         market_sentiment = float(txtMarketSentiment.get())
         market_cap = float(txtMarketCap.get())
-
         risk_factor = 1 / market_cap  # Smaller market cap results in higher risk
-
         predicted_price = current_price * (1 + ((trade_volume / 100) * market_sentiment) * risk_factor)
         output_label.config(text=f"Predicted Price: {predicted_price}")
     except ValueError:
@@ -15,6 +13,11 @@ def predict_stock_price():
 window = tk.Tk()
 window.title("Stock Prediction Calculator")
 window.geometry("600x400")
+
+
+# Add custom color to background
+window.configure(background='light blue')
+
 
 
 # Create labels
@@ -31,8 +34,10 @@ txtMarketSentiment = tk.Entry(window)
 txtMarketCap = tk.Entry(window)
 
 
+
 # Create button
 btnPredict = tk.Button(window, text="Predict", command=predict_stock_price)
+
 
 
 # Create output label
@@ -50,6 +55,7 @@ txtMarketSentiment.grid(row=2, column=1, padx=10, pady=10)
 txtMarketCap.grid(row=3, column=1, padx=10, pady=10)
 btnPredict.grid(row=4, column=0, padx=10, pady=10)
 output_label.grid(row=4, column=1, padx=10, pady=10)
+
 
 
 # Build window
