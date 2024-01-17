@@ -21,18 +21,19 @@ window.configure(background='light blue')
 
 
 
-# Create labels
-lblCurrentPrice = tk.Label(window, text="Current Price:")
-lblTradeVolume = tk.Label(window, text="Trade Volume:")
-lblMarketSentiment = tk.Label(window, text="Market Sentiment:")
-lblMarketCap = tk.Label(window, text="Market Cap (in billions):")
+# Create labels with custom font
+custom_font = ('Arial', 12)  # Example of a custom font
+lblCurrentPrice = tk.Label(window, text="Current Price:", font=custom_font)
+lblTradeVolume = tk.Label(window, text="Trade Volume:", font=custom_font)
+lblMarketSentiment = tk.Label(window, text="Market Sentiment:", font=custom_font)
+lblMarketCap = tk.Label(window, text="Market Cap (in billions):", font=custom_font)
 
 
-# Create textboxes
-txtCurrentPrice = tk.Entry(window)
-txtTradeVolume = tk.Entry(window)
-txtMarketSentiment = tk.Entry(window)
-txtMarketCap = tk.Entry(window)
+# Create textboxes with custom font
+txtCurrentPrice = tk.Entry(window, font=custom_font)
+txtTradeVolume = tk.Entry(window, font=custom_font)
+txtMarketSentiment = tk.Entry(window, font=custom_font)
+txtMarketCap = tk.Entry(window, font=custom_font)
 
 
 
@@ -61,6 +62,7 @@ output_label.grid(row=4, column=1, padx=10, pady=10)
 
 # Build window
 window.mainloop()
+
 
 
 
